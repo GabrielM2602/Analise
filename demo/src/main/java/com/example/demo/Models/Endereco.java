@@ -20,34 +20,27 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "usuario")
-
-
-public class Usuario implements Serializable {
+@Table(name = "endereco")
+public class Endereco implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-
-    private Long id;
-
-    @Column(nullable = false)
-    private String nome;
+    
+    private long id;
 
     @Column(nullable = false)
-    private String email;
-
-    @Column(nullable = false, unique = true)
-    private String senha;
+    private String cep;
 
     @Column(nullable = false)
-    private String telefone;
+    private String bairro;
 
     @Column(nullable = false)
-    private String cpf;
+    private String rua;
 
-    @Column(nullable = false, unique = true)
-    private int endereco;
+    @Column(nullable = false)
+    private String cidade;
 
-
+    @Column(nullable = false)
+    private String estado;
 }

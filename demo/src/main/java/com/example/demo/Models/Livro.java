@@ -1,6 +1,8 @@
 package com.example.demo.Models;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import org.antlr.v4.runtime.misc.NotNull;
 
@@ -20,10 +22,10 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "usuario")
+@Table(name = "livro")
 
 
-public class Usuario implements Serializable {
+public class Livro implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -32,22 +34,19 @@ public class Usuario implements Serializable {
     private Long id;
 
     @Column(nullable = false)
-    private String nome;
-
-    @Column(nullable = false)
-    private String email;
+    private String titulo;
 
     @Column(nullable = false, unique = true)
-    private String senha;
+    private String autor;
 
     @Column(nullable = false)
-    private String telefone;
+    private String genero;
 
     @Column(nullable = false)
-    private String cpf;
+    private LocalDateTime incersao_banco;
 
-    @Column(nullable = false, unique = true)
-    private int endereco;
+    @Column(nullable = false)
+    private LocalDate ano_publicacao;
 
 
 }
